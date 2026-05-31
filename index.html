@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>BRICS World — Консорциум при Московской Ассоциации Предпринимателей</title>
+  <meta name="description" content="Консорциум BRICS World при Московской Ассоциации Предпринимателей. Международное деловое сотрудничество, отраслевые клубы и направление недвижимости." />
+
+  <style>
+    :root {
+      --blue: #465d9f;
+      --blue-dark: #273d78;
+      --blue-deep: #132148;
+      --blue-soft: #eef2fb;
+      --text: #1f2637;
+      --muted: #687184;
+      --light: #f4f6fb;
+      --white: #ffffff;
+      --border: #e3e8f4;
+      --shadow: 0 20px 55px rgba(28, 43, 82, 0.12);
+      --container: 1200px;
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 56px));
+      margin: 0 auto;
+    }
+
+    .btn {
+      min-height: 46px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--blue);
+      box-shadow: 0 14px 35px rgba(70, 93, 159, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--blue-dark);
+      background: var(--white);
+      border-color: #cfd6e8;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(228, 232, 242, 0.9);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      font-weight: 900;
+      color: var(--blue-deep);
+      letter-spacing: -0.04em;
+      font-size: 25px;
+      white-space: nowrap;
+      min-width: max-content;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: var(--blue);
+      position: relative;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 13px;
+      letter-spacing: -0.02em;
+      flex: 0 0 auto;
+    }
+
+    .logo-mark::before,
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      background: var(--white);
+      border-radius: 2px;
+    }
+
+    .logo-mark::before {
+      left: -5px;
+      top: 7px;
+    }
+
+    .logo-mark::after {
+      right: -5px;
+      bottom: 7px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: #293146;
+      font-size: 15px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+    .menu a {
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .menu a:hover {
+      color: var(--blue);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-left: auto;
+      min-width: max-content;
+    }
+
+    .phone {
+      text-align: right;
+      color: var(--blue-deep);
+      font-weight: 900;
+      font-size: 15px;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    .phone small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    .search {
+      width: 26px;
+      height: 26px;
+      border: 0;
+      background: transparent;
+      color: var(--blue-deep);
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .burger {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      cursor: pointer;
+      color: var(--blue-deep);
+      font-size: 23px;
+    }
+
+    .hero {
+      padding: 54px 0 68px;
+    }
+
+    .hero-card {
+      min-height: 455px;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(circle at 67% 38%, rgba(255, 255, 255, 0.14), transparent 18%),
+        radial-gradient(circle at 80% 28%, rgba(255, 255, 255, 0.08), transparent 28%),
+        linear-gradient(135deg, #263f7d 0%, #182b5b 58%, #0f1d40 100%);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      align-items: stretch;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      right: 250px;
+      top: -150px;
+      width: 620px;
+      height: 620px;
+      border-radius: 50%;
+      background:
+        repeating-radial-gradient(circle at 50% 50%,
+          rgba(255,255,255,0.12) 0 2px,
+          transparent 2px 18px);
+      opacity: 0.42;
+      transform: rotate(-18deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 118px 64px 64px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: 0.96;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      max-width: 780px;
+      font-weight: 900;
+    }
+
+    .hero-content p {
+      max-width: 620px;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.86);
+      margin-bottom: 34px;
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .arrow {
+      width: 38px;
+      height: 18px;
+      position: relative;
+      display: inline-block;
+      flex: 0 0 auto;
+    }
+
+    .arrow::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.75;
+    }
+
+    .arrow::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 4px;
+      width: 9px;
+      height: 9px;
+      border-top: 1px solid currentColor;
+      border-right: 1px solid currentColor;
+      transform: rotate(45deg);
+    }
+
+    .hero-side {
+      position: relative;
+      z-index: 3;
+      padding: 98px 42px 44px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: flex-start;
+    }
+
+    .hero-mini {
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .hero-mini .icon {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .hero-mini h3 {
+      font-size: 16px;
+      line-height: 1.25;
+      margin-bottom: 9px;
+    }
+
+    .hero-mini p {
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .hero-mini a {
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .slider-nav {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 4px;
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+    }
+
+    .slider-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.24);
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: rgba(255,255,255,.12);
+    }
+
+    .section {
+      padding: 62px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 390px minmax(0, 1fr);
+      gap: 54px;
+      align-items: start;
+      margin-bottom: 36px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 3.3vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      color: #27304a;
+      font-weight: 900;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 780px;
+    }
+
+    .categories-wrap {
+      position: relative;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .cat-card {
+      min-height: 160px;
+      border-radius: 20px;
+      padding: 24px;
+      background: #f0f2f7;
+      position: relative;
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .cat-card h3 {
+      color: #26304a;
+      font-size: 15px;
+      line-height: 1.28;
+      max-width: 175px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cat-card .cat-img {
+      position: absolute;
+      right: -8px;
+      bottom: -8px;
+      width: 122px;
+      height: 86px;
+      opacity: 0.65;
+      background:
+        linear-gradient(135deg, rgba(70,93,159,.24), rgba(70,93,159,.04)),
+        repeating-linear-gradient(90deg, rgba(36,55,104,.16) 0 2px, transparent 2px 8px);
+      border-radius: 13px;
+      transform: rotate(-5deg);
+    }
+
+    .cat-card .cat-arrow {
+      position: absolute;
+      right: 20px;
+      top: 68px;
+      color: #7d8494;
+      width: 42px;
+    }
+
+    .small-controls {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .round-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .round-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 0;
+      background: var(--blue);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+
+    .about-block {
+      padding: 44px 0 72px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 265px minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .about-left-card {
+      min-height: 170px;
+      border-radius: 20px;
+      background: var(--blue);
+      color: var(--white);
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-left-card h3 {
+      font-size: 24px;
+      line-height: 1.14;
+      margin-bottom: 30px;
+    }
+
+    .about-left-card a {
+      font-size: 13px;
+      color: rgba(255,255,255,.88);
+      font-weight: 800;
+    }
+
+    .about-left-card.light {
+      background: #f0f2f7;
+      color: #27304a;
+    }
+
+    .about-left-card.light h3 {
+      color: #27304a;
+    }
+
+    .about-left-card.light a {
+      color: var(--blue);
+    }
+
+    .about-content h2 {
+      color: #27304a;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 880px;
+      margin-bottom: 18px;
+    }
+
+    /* Аккуратно исправленный синий блок */
+
+    .stats-band {
+      padding: 44px 0 86px;
+    }
+
+    .stats-shell {
+      position: relative;
+      border-radius: 0 0 28px 28px;
+      background:
+        radial-gradient(circle at 15% 76%, rgba(8, 25, 85, 0.52), transparent 25%),
+        radial-gradient(circle at 82% 22%, rgba(255,255,255,.12), transparent 28%),
+        linear-gradient(135deg, #4965ad, #314b8e);
+      overflow: hidden;
+      padding: 76px 52px 56px;
+      color: var(--white);
+    }
+
+    .stats-shell::before {
+      content: "";
+      position: absolute;
+      left: 28px;
+      bottom: -118px;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      background:
+        repeating-radial-gradient(circle at 50% 50%,
+          rgba(255,255,255,.20) 0 2px,
+          transparent 2px 16px);
+      opacity: 0.34;
+      pointer-events: none;
+    }
+
+    .stats-main {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .territory {
+      border-radius: 20px;
+      padding: 28px;
+      min-height: 190px;
+      background: rgba(38, 55, 104, 0.68);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .territory h3 {
+      font-size: 21px;
+      line-height: 1.22;
+      margin-bottom: 18px;
+    }
+
+    .territory p {
+      color: rgba(255,255,255,.76);
+      font-size: 15px;
+    }
+
+    .stat-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .stat-card {
+      min-height: 270px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 20px 50px rgba(17, 29, 64, 0.18);
+      padding: 40px;
+      color: var(--blue);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: clamp(64px, 7vw, 90px);
+      line-height: 1;
+      letter-spacing: 0.08em;
+      font-weight: 900;
+      color: var(--blue);
+      margin-bottom: 34px;
+      word-break: keep-all;
+    }
+
+    .stat-card h3 {
+      color: var(--blue);
+      font-size: 19px;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .stat-card p {
+      color: #5e677c;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .principles {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 34px;
+      padding-left: 294px;
+    }
+
+    .principle-card {
+      min-height: 154px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 18px 45px rgba(17, 29, 64, 0.16);
+      padding: 26px;
+      color: var(--text);
+    }
+
+    .principle-card .num {
+      color: var(--blue);
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .principle-card h3 {
+      color: #27304a;
+      font-size: 20px;
+      line-height: 1.15;
+      margin-bottom: 11px;
+    }
+
+    .principle-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .industries-section {
+      padding: 50px 0 76px;
+    }
+
+    .industries-top {
+      display: grid;
+      grid-template-columns: 410px minmax(0, 1fr);
+      gap: 64px;
+      align-items: start;
+      margin-bottom: 38px;
+    }
+
+    .industries-top h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.06;
+      color: #27304a;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+    }
+
+    .checks {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .checks li {
+      color: var(--muted);
+      padding-left: 36px;
+      position: relative;
+      font-size: 15px;
+    }
+
+    .checks li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      width: 22px;
+      height: 22px;
+      border: 1px solid var(--blue);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .industry-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding-top: 6px;
+    }
+
+    .tag {
+      border: 0;
+      padding: 11px 24px;
+      border-radius: 999px;
+      background: #858b98;
+      color: var(--white);
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .tag:hover,
+    .tag.active {
+      background: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .industry-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .leader-info {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+      padding: 8px 0;
+    }
+
+    .leader-photo {
+      border-radius: 22px;
+      overflow: hidden;
+      background: var(--blue-soft);
+      box-shadow: 0 16px 40px rgba(28, 43, 82, 0.12);
+    }
+
+    .leader-photo img {
+      width: 100%;
+      aspect-ratio: 0.8 / 1;
+      object-fit: cover;
+    }
+
+    .news-section {
+      padding: 46px 0 96px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr) minmax(0, 1fr);
+      grid-auto-rows: 200px;
+      gap: 26px;
+    }
+
+    .news-main {
+      grid-row: span 2;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 90% 12%, rgba(255,255,255,.18), transparent 20%),
+        linear-gradient(135deg, var(--blue), #354e92);
+      color: var(--white);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .news-main::after {
+      content: "";
+      position: absolute;
+      right: -35px;
+      top: 28px;
+      width: 110px;
+      height: 110px;
+      background:
+        linear-gradient(90deg, transparent 0 34%, rgba(255,255,255,.95) 34% 50%, transparent 50% 100%),
+        linear-gradient(0deg, transparent 0 34%, rgba(255,255,255,.95) 34% 50%, transparent 50% 100%);
+      opacity: 0.9;
+    }
+
+    .news-main h2 {
+      font-size: 34px;
+      letter-spacing: -0.04em;
+    }
+
+    .news-main p {
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+      max-width: 240px;
+    }
+
+    .news-card {
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+      color: var(--white);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 200px;
+      background:
+        linear-gradient(180deg, rgba(22,35,76,0.08), rgba(22,35,76,0.78)),
+        linear-gradient(135deg, #7088c7, #263a72);
+    }
+
+    .news-card:nth-child(3) {
+      background:
+        linear-gradient(180deg, rgba(22,35,76,0.02), rgba(22,35,76,0.76)),
+        radial-gradient(circle at 78% 24%, #cad7ff, transparent 26%),
+        linear-gradient(135deg, #1f3265, #405da3);
+    }
+
+    .news-card:nth-child(4) {
+      background:
+        linear-gradient(180deg, rgba(22,35,76,0.03), rgba(22,35,76,0.75)),
+        linear-gradient(135deg, #6377b2, #2f447e);
+    }
+
+    .news-card:nth-child(5) {
+      background:
+        linear-gradient(180deg, rgba(22,35,76,0.03), rgba(22,35,76,0.75)),
+        linear-gradient(135deg, #dce3ef, #435b9d);
+    }
+
+    .news-card:nth-child(6) {
+      background:
+        linear-gradient(180deg, rgba(22,35,76,0.03), rgba(22,35,76,0.75)),
+        linear-gradient(135deg, #b8c2d6, #344b89);
+    }
+
+    .news-label {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(70,93,159,.84);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .news-date {
+      position: absolute;
+      right: 22px;
+      top: 22px;
+      color: rgba(255,255,255,.76);
+      font-size: 11px;
+    }
+
+    .news-card h3 {
+      font-size: 17px;
+      line-height: 1.25;
+      max-width: 360px;
+      margin-bottom: 12px;
+    }
+
+    .news-card a {
+      color: rgba(255,255,255,.84);
+      font-size: 12px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .partners {
+      background: var(--blue);
+      color: var(--white);
+      padding: 36px 0 0;
+    }
+
+    .partners-row {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 20px;
+      align-items: center;
+      padding: 0 0 28px;
+      opacity: 0.76;
+    }
+
+    .partner-logo {
+      min-height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: rgba(255,255,255,.9);
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: -0.04em;
+      text-align: center;
+    }
+
+    .footer {
+      background: var(--blue);
+      color: var(--white);
+      padding: 0 0 30px;
+    }
+
+    .footer-card {
+      border-top: 1px solid rgba(255,255,255,.18);
+      border-bottom: 1px solid rgba(255,255,255,.18);
+      padding: 28px 0;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      margin-bottom: 24px;
+      font-size: 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    .footer-col small {
+      display: inline-block;
+      padding: 6px 13px;
+      border-radius: 999px;
+      background: rgba(24,39,80,.42);
+      color: rgba(255,255,255,.84);
+      margin-bottom: 13px;
+      font-size: 11px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,.76);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .copy {
+      text-align: center;
+      color: rgba(255,255,255,.66);
+      font-size: 12px;
+      padding-top: 18px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(15, 25, 52, 0.64);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-box {
+      width: min(520px, 100%);
+      background: var(--white);
+      border-radius: 26px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+      padding: 30px;
+      position: relative;
+    }
+
+    .modal-box h2 {
+      color: #27304a;
+      font-size: 30px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      letter-spacing: -0.04em;
+    }
+
+    .modal-box p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 16px;
+      border: 0;
+      background: transparent;
+      font-size: 28px;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .form input,
+    .form textarea,
+    .form select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 15px;
+      outline: none;
+      color: var(--text);
+      background: #f7f8fb;
+    }
+
+    .form textarea {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .form input:focus,
+    .form textarea:focus,
+    .form select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(70, 93, 159, 0.1);
+      background: var(--white);
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 1240px) {
+      .menu {
+        gap: 20px;
+      }
+
+      .header-right {
+        gap: 14px;
+      }
+
+      .phone {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 1120px) {
+      .menu,
+      .header-right .phone,
+      .header-right .search,
+      .header-right .btn {
+        display: none;
+      }
+
+      .burger {
+        display: grid;
+        place-items: center;
+      }
+
+      .menu.open {
+        display: grid;
+        position: absolute;
+        left: 28px;
+        right: 28px;
+        top: 84px;
+        padding: 20px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        z-index: 150;
+        gap: 16px;
+      }
+
+      .hero-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        padding: 0 42px 46px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .slider-nav {
+        grid-column: 1 / -1;
+      }
+
+      .section-head,
+      .about-grid,
+      .stats-main,
+      .industries-top {
+        grid-template-columns: 1fr;
+      }
+
+      .categories {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .stats-shell {
+        padding: 56px 36px 44px;
+      }
+
+      .principles {
+        padding-left: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .territory {
+        min-height: auto;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .news-main {
+        grid-row: auto;
+        min-height: 250px;
+      }
+
+      .partners-row {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 24px, var(--container));
+      }
+
+      .nav {
+        height: 66px;
+      }
+
+      .logo {
+        font-size: 18px;
+        gap: 10px;
+      }
+
+      .logo-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .menu.open {
+        left: 12px;
+        right: 12px;
+        top: 74px;
+      }
+
+      .hero {
+        padding: 22px 0 46px;
+      }
+
+      .hero-card {
+        border-radius: 0 0 24px 24px;
+        min-height: auto;
+      }
+
+      .hero-card::before {
+        right: -150px;
+        top: -140px;
+        width: 420px;
+        height: 420px;
+      }
+
+      .hero-content {
+        padding: 72px 22px 30px;
+      }
+
+      .hero-content h1 {
+        font-size: 38px;
+        line-height: 1;
+        margin-bottom: 18px;
+      }
+
+      .hero-content p {
+        font-size: 15px;
+        margin-bottom: 26px;
+      }
+
+      .hero-side {
+        padding: 0 22px 28px;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .hero-mini {
+        padding: 20px;
+      }
+
+      .section {
+        padding: 42px 0;
+      }
+
+      .section-head {
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .section-text {
+        font-size: 15px;
+      }
+
+      .categories {
+        display: flex;
+        overflow-x: auto;
+        gap: 14px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .cat-card {
+        min-width: 250px;
+        min-height: 150px;
+        scroll-snap-align: start;
+      }
+
+      .small-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .small-controls .btn {
+        width: 100%;
+      }
+
+      .about-block {
+        padding: 34px 0 46px;
+      }
+
+      .about-left-card {
+        min-height: 145px;
+      }
+
+      .stats-band {
+        padding: 28px 0 54px;
+      }
+
+      .stats-shell {
+        border-radius: 0 0 24px 24px;
+        padding: 28px 16px 28px;
+      }
+
+      .stats-main {
+        gap: 18px;
+      }
+
+      .territory {
+        padding: 22px;
+        border-radius: 18px;
+      }
+
+      .territory h3 {
+        font-size: 19px;
+      }
+
+      .stat-cards,
+      .principles,
+      .news-grid,
+      .partners-row,
+      .footer-grid,
+      .leader-info {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-cards {
+        gap: 18px;
+      }
+
+      .stat-card {
+        min-height: auto;
+        padding: 28px 24px;
+      }
+
+      .stat-card strong {
+        font-size: 58px;
+        margin-bottom: 24px;
+      }
+
+      .principles {
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .principle-card {
+        min-height: auto;
+        padding: 22px;
+      }
+
+      .industries-section {
+        padding: 38px 0 50px;
+      }
+
+      .industries-top {
+        gap: 26px;
+      }
+
+      .industry-tags {
+        gap: 10px;
+      }
+
+      .tag {
+        width: 100%;
+        text-align: center;
+        padding: 12px 18px;
+      }
+
+      .industry-actions {
+        flex-direction: column;
+      }
+
+      .industry-actions .btn {
+        width: 100%;
+      }
+
+      .leader-info {
+        gap: 20px;
+      }
+
+      .leader-photo {
+        max-width: 240px;
+      }
+
+      .news-section {
+        padding: 34px 0 58px;
+      }
+
+      .news-grid {
+        grid-auto-rows: auto;
+        gap: 16px;
+      }
+
+      .news-card,
+      .news-main {
+        min-height: 230px;
+      }
+
+      .partners {
+        padding-top: 24px;
+      }
+
+      .footer-grid {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-content h1 {
+        font-size: 34px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .modal-box {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#top" class="logo" aria-label="BRICS World">
+        <span class="logo-mark">BW</span>
+        <span>BRICS World</span>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="#about">О консорциуме</a>
+        <a href="#realty">Недвижимость</a>
+        <a href="#industries">Отрасли</a>
+        <a href="#events">Новости</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-right">
+        <button class="search" type="button" aria-label="Поиск">⌕</button>
+        <div class="phone">
+          +7 (000) 000-00-00
+          <small>info@bricsworld.ru</small>
+        </div>
+        <button class="btn btn-primary js-open-modal" type="button">оставить заявку →</button>
+      </div>
+
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-content">
+            <h1>БРИКС WORLD</h1>
+            <p>
+              Консорциум при Московской Ассоциации Предпринимателей для развития
+              международного делового сотрудничества, отраслевых проектов и партнёрств.
+            </p>
+            <a class="hero-link" href="#about">
+              О консорциуме
+              <span class="arrow"></span>
+            </a>
+          </div>
+
+          <div class="hero-side">
+            <div class="hero-mini">
+              <div class="icon">🌍</div>
+              <h3>Международные деловые связи</h3>
+              <p>БРИКС, дружественные страны, бизнес-миссии и B2B-партнёрства.</p>
+              <a href="#about">подробнее →</a>
+            </div>
+
+            <div class="hero-mini">
+              <div class="icon">🏢</div>
+              <h3>Направление недвижимости</h3>
+              <p>Инвестиции, девелопмент, партнёрские проекты и экспертная среда.</p>
+              <a href="#realty">подробнее →</a>
+            </div>
+
+            <div class="slider-nav">
+              <span class="slider-btn">‹</span>
+              <span class="slider-btn">›</span>
+              <span>| 01</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Консорциум BRICS World</h2>
+          <p class="section-text">
+            BRICS World — деловая платформа, созданная для объединения предпринимателей,
+            экспертов, отраслевых руководителей и международных партнёров вокруг практических
+            проектов в сфере внешнеэкономического и международного сотрудничества.
+          </p>
+        </div>
+
+        <div class="categories-wrap">
+          <div class="categories">
+            <a class="cat-card" href="#realty">
+              <h3>Направление недвижимости</h3>
+              <span class="cat-arrow arrow"></span>
+              <span class="cat-img"></span>
+            </a>
+
+            <a class="cat-card" href="#industries">
+              <h3>Отраслевые экспертные советы</h3>
+              <span class="cat-arrow arrow"></span>
+              <span class="cat-img"></span>
+            </a>
+
+            <a class="cat-card" href="#events">
+              <h3>Деловые мероприятия</h3>
+              <span class="cat-arrow arrow"></span>
+              <span class="cat-img"></span>
+            </a>
+
+            <a class="cat-card" href="#contacts">
+              <h3>Партнёрские проекты</h3>
+              <span class="cat-arrow arrow"></span>
+              <span class="cat-img"></span>
+            </a>
+
+            <a class="cat-card" href="#industries">
+              <h3>Международные направления</h3>
+              <span class="cat-arrow arrow"></span>
+              <span class="cat-img"></span>
+            </a>
+          </div>
+
+          <div class="small-controls">
+            <div class="round-controls">
+              <button class="round-btn" type="button">‹</button>
+              <button class="round-btn" type="button">›</button>
+            </div>
+            <a class="btn btn-outline" href="#industries">Посмотреть отрасли →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-block">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-left-card">
+            <h3>О компании</h3>
+            <a href="#about">подробнее <span class="arrow"></span></a>
+          </div>
+
+          <div class="about-content">
+            <h2>Деловая платформа при Московской Ассоциации Предпринимателей</h2>
+            <p>
+              Консорциум «БРИКС ВОРЛД» действует при МОО МАП и объединяет представителей
+              бизнеса, экспертных сообществ, отраслевых направлений и международных партнёров.
+            </p>
+            <p>
+              Первоначально BRICS World был создан как деловой клуб 24 сентября 2015 года.
+              В дальнейшем формат был расширен до консорциума с отраслевыми и международными
+              направлениями работы.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-band">
+      <div class="container">
+        <div class="stats-shell">
+          <div class="stats-main">
+            <div class="territory">
+              <h3>Работаем с предпринимателями и экспертами</h3>
+              <p>Москва · Россия · страны БРИКС · дружественные государства</p>
+            </div>
+
+            <div class="stat-cards">
+              <div class="stat-card">
+                <strong>11+</strong>
+                <div>
+                  <h3>Лет истории</h3>
+                  <p>BRICS World основан в 2015 году как деловой клуб.</p>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <strong>8+</strong>
+                <div>
+                  <h3>Отраслевых направлений</h3>
+                  <p>Недвижимость, медицина, образование, спорт, право, финансы и другие сферы.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="principles">
+            <div class="principle-card">
+              <div class="num">01</div>
+              <h3>Развиваем</h3>
+              <p>международные деловые связи</p>
+            </div>
+
+            <div class="principle-card">
+              <div class="num">02</div>
+              <h3>Создаем</h3>
+              <p>отраслевые экспертные команды</p>
+            </div>
+
+            <div class="principle-card">
+              <div class="num">03</div>
+              <h3>Помогаем</h3>
+              <p>находить партнёров и возможности</p>
+            </div>
+
+            <div class="principle-card">
+              <div class="num">04</div>
+              <h3>Сопровождаем</h3>
+              <p>проекты, встречи и презентации</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries-section" id="realty">
+      <div class="container">
+        <div class="industries-top">
+          <div>
+            <h2>Направление недвижимости</h2>
+            <ul class="checks">
+              <li>Поиск партнёров для инвестиционных и девелоперских проектов</li>
+              <li>Презентация объектов и деловых инициатив</li>
+              <li>Экспертное сопровождение сделок и международных контактов</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="industry-tags">
+              <button class="tag active" type="button">Инвестиции</button>
+              <button class="tag" type="button">Девелопмент</button>
+              <button class="tag" type="button">Коммерческая недвижимость</button>
+              <button class="tag" type="button">Загородные проекты</button>
+              <button class="tag" type="button">Отели и туризм</button>
+              <button class="tag" type="button">Юридическое сопровождение</button>
+            </div>
+
+            <div class="industry-actions">
+              <button class="btn btn-primary js-open-modal" type="button">оставить заявку →</button>
+              <a class="btn btn-outline" href="#contacts">обратный звонок →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-grid" style="align-items: stretch;">
+          <div class="about-left-card light">
+            <h3>Гавшин Максим Сергеевич</h3>
+            <a href="#contacts">связаться <span class="arrow"></span></a>
+          </div>
+
+          <div class="about-content leader-info">
+            <div class="leader-photo">
+              <img
+                src="gavshin-maxim.jpg"
+                alt="Гавшин Максим Сергеевич"
+                onerror="this.style.display='none';"
+              />
+            </div>
+
+            <div>
+              <h2>Руководитель по направлению недвижимости в клубе «Консорциум BRICS World»</h2>
+              <p>
+                Направление объединяет предпринимателей, собственников, инвесторов,
+                девелоперов, брокеров и экспертов для развития проектов в сфере недвижимости,
+                поиска партнёров и презентации инициатив в деловой среде.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries-section" id="industries">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Выберите отрасль, а мы подскажем решение</h2>
+          <p class="section-text">
+            Отраслевые направления позволяют формировать экспертные группы, запускать
+            мероприятия, развивать партнёрства и объединять предпринимателей вокруг конкретных задач.
+          </p>
+        </div>
+
+        <div class="industry-tags">
+          <button class="tag active" type="button">Психология</button>
+          <button class="tag" type="button">Бухгалтерия</button>
+          <button class="tag" type="button">Медицина</button>
+          <button class="tag" type="button">Пиар и GR стратегия</button>
+          <button class="tag" type="button">Дети — БРИКС</button>
+          <button class="tag" type="button">Образование</button>
+          <button class="tag" type="button">Спорт</button>
+          <button class="tag" type="button">Юридическое</button>
+        </div>
+
+        <div class="industry-actions">
+          <button class="btn btn-primary js-open-modal" type="button">оставить заявку →</button>
+          <a class="btn btn-outline" href="#contacts">обратный звонок →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-section" id="events">
+      <div class="container">
+        <div class="news-grid">
+          <div class="news-main">
+            <h2>Новости</h2>
+            <p>
+              В данном разделе публикуются последние новости, мероприятия,
+              встречи и деловые инициативы Консорциума BRICS World.
+            </p>
+            <a class="btn btn-outline" href="#contacts">все новости →</a>
+          </div>
+
+          <article class="news-card">
+            <span class="news-label">мероприятие</span>
+            <span class="news-date">сентябрь 2026</span>
+            <h3>23 сентября в МТПП был создан клуб BRICS World</h3>
+            <a href="#contacts">читать далее →</a>
+          </article>
+
+          <article class="news-card">
+            <span class="news-label">партнёрство</span>
+            <span class="news-date">2026</span>
+            <h3>Развитие направления недвижимости и международных проектов</h3>
+            <a href="#contacts">читать далее →</a>
+          </article>
+
+          <article class="news-card">
+            <span class="news-label">отрасли</span>
+            <span class="news-date">2026</span>
+            <h3>Формирование экспертных отраслевых направлений</h3>
+            <a href="#contacts">читать далее →</a>
+          </article>
+
+          <article class="news-card">
+            <span class="news-label">бизнес</span>
+            <span class="news-date">2026</span>
+            <h3>BRICS World объединяет предпринимателей и экспертов</h3>
+            <a href="#contacts">читать далее →</a>
+          </article>
+
+          <article class="news-card">
+            <span class="news-label">консорциум</span>
+            <span class="news-date">2015–2026</span>
+            <h3>11 лет развития международной деловой повестки</h3>
+            <a href="#contacts">читать далее →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="partners">
+    <div class="container">
+      <div class="partners-row">
+        <div class="partner-logo">МОО МАП</div>
+        <div class="partner-logo">МТПП</div>
+        <div class="partner-logo">BRICS</div>
+        <div class="partner-logo">WORLD</div>
+        <div class="partner-logo">BUSINESS</div>
+        <div class="partner-logo">REALTY</div>
+        <div class="partner-logo">EXPERTS</div>
+        <div class="partner-logo">CLUB</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contacts">
+    <div class="container">
+      <div class="footer-card">
+        <div class="footer-logo">
+          <span class="logo-mark">BW</span>
+          <span>BRICS World</span>
+        </div>
+
+        <div class="footer-grid">
+          <div class="footer-col">
+            <small>адрес</small>
+            <p>г. Москва</p>
+            <p>Московская Ассоциация Предпринимателей</p>
+          </div>
+
+          <div class="footer-col">
+            <small>телефон</small>
+            <p>+7 (000) 000-00-00</p>
+            <p>+7 (000) 000-00-00</p>
+          </div>
+
+          <div class="footer-col">
+            <small>e-mail</small>
+            <p>info@bricsworld.ru</p>
+            <p>partners@bricsworld.ru</p>
+          </div>
+
+          <div class="footer-col">
+            <small>мессенджеры</small>
+            <a href="#">WhatsApp</a>
+            <a href="#">Telegram</a>
+          </div>
+
+          <div class="footer-col">
+            <small>навигация</small>
+            <a href="#about">О консорциуме</a>
+            <a href="#realty">Недвижимость</a>
+            <a href="#industries">Отрасли</a>
+            <a href="#events">Новости</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copy">
+        © <span id="year"></span> BRICS World. Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" type="button">×</button>
+      <h2>Оставить заявку</h2>
+      <p>Заполните форму, и с вами свяжутся для обсуждения участия, партнёрства или проекта.</p>
+
+      <form class="form" id="leadForm">
+        <input type="text" name="name" placeholder="Ваше имя" required />
+        <input type="tel" name="phone" placeholder="Телефон" required />
+        <input type="email" name="email" placeholder="E-mail" />
+
+        <select name="direction" required>
+          <option value="">Выберите направление</option>
+          <option>Недвижимость</option>
+          <option>Психология</option>
+          <option>Бухгалтерия</option>
+          <option>Медицина</option>
+          <option>Пиар и GR стратегия</option>
+          <option>Дети — БРИКС</option>
+          <option>Образование</option>
+          <option>Спорт</option>
+          <option>Юридическое</option>
+        </select>
+
+        <textarea name="message" placeholder="Кратко опишите ваш запрос"></textarea>
+
+        <button class="btn btn-primary" type="submit">Отправить заявку →</button>
+
+        <div class="form-note">
+          Форма демонстрационная. Для реальной отправки нужно подключить backend, Telegram-бота, CRM или почту.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('menu');
+    const modal = document.getElementById('modal');
+    const modalClose = document.getElementById('modalClose');
+    const leadForm = document.getElementById('leadForm');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      burger.textContent = menu.classList.contains('open') ? '×' : '☰';
+    });
+
+    document.querySelectorAll('.menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        burger.textContent = '☰';
+      });
+    });
+
+    document.querySelectorAll('.js-open-modal').forEach((button) => {
+      button.addEventListener('click', () => {
+        modal.classList.add('open');
+      });
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('open');
+    });
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.classList.remove('open');
+      }
+    });
+
+    document.querySelectorAll('.tag').forEach((tag) => {
+      tag.addEventListener('click', () => {
+        const parent = tag.parentElement;
+        parent.querySelectorAll('.tag').forEach((item) => item.classList.remove('active'));
+        tag.classList.add('active');
+      });
+    });
+
+    leadForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const data = Object.fromEntries(new FormData(leadForm).entries());
+      console.log('Заявка:', data);
+
+      alert('Заявка подготовлена. Для реальной отправки подключите backend, Telegram-бота, CRM или почту.');
+      leadForm.reset();
+      modal.classList.remove('open');
+    });
+  </script>
+</body>
+</html>
